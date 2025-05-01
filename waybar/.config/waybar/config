@@ -1,0 +1,25 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "memory",
+    "cpu",
+    "network",
+    "custom:ip"
+  ],
+
+  "clock": {
+    "format": "{:%H:%M:%S}"
+  },
+
+  "memory": {
+    "format": "RAM {used_percent}%"
+  },
+
+  "cpu": {
+    "format": "CPU {usage}%"
+  },
+}
+

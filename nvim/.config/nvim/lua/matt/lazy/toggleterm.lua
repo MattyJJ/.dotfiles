@@ -1,0 +1,23 @@
+return {
+  --   "akinsho/toggleterm.nvim",
+  --   version = "*",
+  --   config = function()
+  --     require("toggleterm").setup({
+  --       open_mapping = [[<C-\>]],
+  --       direction = "float",
+  --       float_opts = {
+  --         border = "curved",
+  --         width = function()
+  --           return math.floor(vim.o.columns * 0.95)
+  --         end,
+  --         height = function()
+  --           return math.floor(vim.o.lines * 0.9)
+  --         end,
+  --         winblend = 0, -- solid, no transparency
+  --       },
+  --       shade_terminals = true,
+  --       start_in_insert = true,
+  --       insert_mappings = true,
+  --     })
+  --   end,
+}
