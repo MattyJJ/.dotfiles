@@ -15,9 +15,9 @@ source languages/install_cxx.sh
 source other/install_libs.sh
 
 source apps/install_generic.sh
-source apps/install_asdf.sh
 source apps/install_alacritty.sh
 source apps/install_docker.sh
 source apps/install_neovim.sh
 source apps/install_zsh.sh
 
+source other/install_asdf.sh

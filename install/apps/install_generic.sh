@@ -6,7 +6,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
   foot \
   xwayland \
   sway \
-  swaybf \
+  swaybg \
   swayidle \
   swaylock \
   waybar  
