@@ -1,22 +1,20 @@
 
 set $mod Mod1
-set $term alacritty
-set $menu wofi
+set $term foot
+set $menu dmenu
 set $editor nvim
-set $bar waybar
 
-exec $bar
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 15px
+font pango:0xProto Nerd Font, monospace 15px
 
 # GET DEM BORDERS OUT OF HEREc:w
 for_window [class=".*"] border none
 for_window [app_id=".*"] border none
 
 
-client.focused          #285577 #285577 #ffffff #77dd77 #285577
+client.focused #285577 #285577 #ffffff #77dd77 #285577
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -28,10 +26,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec $menu --show drun
+bindsym $mod+d exec $menu
 
-bindsym $mod+Shift+e exec swaymsg -t get_inputs && \
-  exec 'bash -c "wofi --dmenu --prompt Exit? <<< \"yes\nno\" | grep -q yes && swaymsg exit"'
+bindsym $mod+Shift+e exec 'bash -c "dmenu -p Exit? <<< \"yes\nno\" | grep -q yes && i3-msg exit"'
 
 # change focus
 bindsym $mod+h focus left
@@ -57,10 +54,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# split
 bindsym $mod+z split h
-
-# split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
@@ -134,4 +129,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+bar {
+    status_command i3status
+    font pango:monospace 15px
+    position top
+
+}
 

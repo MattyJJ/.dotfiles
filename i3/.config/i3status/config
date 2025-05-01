@@ -1,0 +1,35 @@
+general {
+    output_format = "i3bar"
+}
+
+order += "i3bar_workspace"
+order += "time"
+order += "memory"
+order += "cpu"
+order += "network"
+order += "custom_ip"
+
+# Time format
+time_format = "%H:%M:%S"
+
+# Memory usage
+memory {
+    format = "RAM {used_percent}%"
+}
+
+# CPU usage
+cpu {
+    format = "CPU {usage}%"
+}
+
+# Network status
+network {
+    format_up = "Network {ipaddr} {speed}"
+    format_down = "Network down"
+}
+
+# Custom IP address (you can use a script to fetch the IP)
+custom_ip {
+    exec = "curl -s http://ipinfo.io/ip"
+    format = "IP {output}"
+}

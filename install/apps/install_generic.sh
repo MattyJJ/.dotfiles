@@ -4,9 +4,10 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
   tmux \
   neofetch \
   foot \
-  xwayland \
-  sway \
-  swaybg \
-  swayidle \
-  swaylock \
-  waybar  
+  i3 \
+  i3bar \
+  i3status \
+  i3blocks \
+  feh \
+  xbacklight \
+  compton 
