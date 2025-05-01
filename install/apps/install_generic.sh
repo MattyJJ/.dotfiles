@@ -3,10 +3,4 @@
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
   tmux \
   neofetch \
-  foot \
-  i3 \
-  i3status \
-  i3blocks \
-  feh \
-  xbacklight \
-  compton 
+  foot 
