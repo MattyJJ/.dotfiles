@@ -5,7 +5,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
   neofetch \
   foot \
   i3 \
-  i3bar \
   i3status \
   i3blocks \
   feh \
