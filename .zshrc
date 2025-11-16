@@ -1,0 +1,61 @@
+setopt AUTO_CD
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
+if [[ ! -d ~/.zsh/plugins/znap ]]; then
+	mkdir -p ~/.zsh/plugins  
+	git clone https://github.com/marlonrichert/zsh-snap.git ~/.zsh/plugins/znap
+fi
+source ~/.zsh/plugins/znap/znap.zsh
+
+export EDITOR=nvim
+export TERMINAL=alacritty
+
+alias ll="ls -la"
+alias la="ls -a"
+alias zsrc="source ~/.zshrc"
+
+# AUTO COMPLETIONS
+
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
+
+# THEME (starship)
+eval "$(starship init zsh)"
+
+# PLUGINS
+
+autoload -Uz znap && znap source marlonrichert/zsh-snap
+
+znap source romkatv/zsh-defer
+
+git_plugins=(
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-completions
+    zsh-users/zsh-syntax-highlighting
+)
+
+for plugin in "${git_plugins[@]}"; do 
+    zsh-defer znap source "$plugin"
+done
+
+zstyle ':completion:*' menu select
+
+# ASDF Path
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+export PATH="$PATH:$HOME/bin"
+
+# SSH
+
+if [ -z "$SSH_AUTH_SOCK" ] || ! pgrep -u "$USER" ssh-agent >/dev/null 2>&1; then
+    eval "$(ssh-agent -s)" >/dev/null 2>&1
+fi
+
+ssh-add -l | grep "id_ed25519" >/dev/null 2>&1 || ssh-add ~/.ssh/id_ed25519 >/dev/null 2>&1

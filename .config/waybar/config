@@ -1,0 +1,46 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["clock", "sway/workspaces"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["pulseaudio", "backlight", "cpu", "battery"],
+
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "tooltip-format": "{:%A, %B %d %Y}",
+    "interval": 1
+  },
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{name}"
+  },
+
+  "sway/window": {
+    "max-length": 80,
+    "format": "{}"
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% ",
+    "format-muted": " Mute",
+    "scroll-step": 5,
+    "tooltip-format": "Volume: {volume}%"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% "
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip-format": "CPU usage: {usage}%"
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  }
+}
+

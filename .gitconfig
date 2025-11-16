@@ -1,0 +1,10 @@
+[user]
+    email = 81206817+MattyJJ@users.noreply.github.com
+	name = Matthew.P
+	signingkey = ~/.ssh/id_ed25519.pub
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
