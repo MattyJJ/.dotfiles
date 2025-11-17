@@ -50,7 +50,7 @@ zstyle ':completion:*' menu select
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/personal/scripts:$PATH"
 
 # SSH
 

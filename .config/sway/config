@@ -4,6 +4,7 @@ set $mod Mod4
 exec swaybg -i ~/personal/wallpapers/joyboy.png -m fill
 exec mako
 
+
 bar {
     swaybar_command waybar
 }
@@ -19,6 +20,7 @@ bindsym $mod+Shift+e exec exec swaymsg exit
 bindsym $mod+Return exec alacritty
 
 bindsym $mod+Shift+q kill
+bindsym $mod+f fullscreen toggle
 
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
 
@@ -31,6 +33,10 @@ bindsym XF86AudioMute exec volumectl toggle
 
 bindsym XF86MonBrightnessUp exec lightctl increase 5%
 bindsym XF86MonBrightnessDown exec lightctl decrease 5%
+
+bindsym Mod1+XF86PickupPhone exec playerctl --player=ncspot next || notify-send "ncspot isn't running"
+bindsym Control+Mod1+XF86HangupPhone exec playerctl --player=ncspot play-pause || notify-send "ncspot isn't running"
+
 
 # MORE KEYBINDS
 
