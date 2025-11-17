@@ -1,4 +1,6 @@
 set $mod Mod4
+set $term kitty
+set $menu rofi -show drun -display-drun ">"
 
 # AUTO START
 exec swaybg -i ~/personal/wallpapers/joyboy.png -m fill
@@ -12,15 +14,15 @@ bar {
 
 # Keybinds
 
-bindsym $mod+d exec rofi -show drun -display-drun ">"
+bindsym $mod+d exec rofi $menu 
+bindsym $mod+Return exec $term
+
+bindsym $mod+f fullscreen toggle
 
 bindsym $mod+e exec swaylock -f -c 24283B  
 bindsym $mod+Shift+e exec exec swaymsg exit
 
-bindsym $mod+Return exec alacritty
-
 bindsym $mod+Shift+q kill
-bindsym $mod+f fullscreen toggle
 
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
 
@@ -49,7 +51,6 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-
 # Move Windows
 mode "move" {
     bindsym 1 move container to workspace number 1
@@ -65,8 +66,6 @@ mode "move" {
     bindsym Escape mode "default"
 }
 bindsym $mod+m mode "move"
-
-
 
 # Resize
 mode "resize" {

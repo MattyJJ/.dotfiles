@@ -8,8 +8,6 @@ if [[ ! -d ~/.zsh/plugins/znap ]]; then
 fi
 source ~/.zsh/plugins/znap/znap.zsh
 
-export EDITOR=nvim
-export TERMINAL=alacritty
 
 alias ll="ls -la"
 alias la="ls -a"
