@@ -15,6 +15,9 @@ alias ll="ls -la"
 alias la="ls -a"
 alias zsrc="source ~/.zshrc"
 
+# to preserve user path, for example to use language binaries managed by asdf
+alias sudo="sudo -E"
+
 # AUTO COMPLETIONS
 
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
@@ -45,12 +48,6 @@ for plugin in "${git_plugins[@]}"; do
 done
 
 zstyle ':completion:*' menu select
-
-# ASDF Path
-
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-export PATH="$HOME/personal/scripts:$PATH"
 
 # SSH
 
