@@ -83,11 +83,11 @@ bindsym $mod+r mode "resize"
 
 # Style
 
-gaps inner 2
+gaps inner 5
+gaps outer 0
 
-smart_borders on
 default_border none
-default_floating_border normal
+default_floating_border none
 
 # Workspace
 

@@ -46,8 +46,3 @@ noremap('<A-k>', '<Cmd>m .-2<CR>==', 'Shift current line down')
 
 voremap('<A-j>', "<Cmd>m '>+1<CR>gv=gv", 'Shift selection up')
 voremap('<A-k>', "<Cmd>m '<-2<CR>gv=gv", 'Shift selection down')
-
-
-
-
-
