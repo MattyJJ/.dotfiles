@@ -58,3 +58,10 @@ fi
 
 ssh-add -l | grep "id_ed25519" >/dev/null 2>&1 || ssh-add ~/.ssh/id_ed25519 >/dev/null 2>&1
 
+# TMUX
+
+if command -v tmux >/dev/null 2>&1; then
+    if [ -z "$TMUX" ]; then
+        exec tmux
+    fi
+f
