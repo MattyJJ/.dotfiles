@@ -6,6 +6,8 @@ set $menu rofi -show drun -display-drun ">"
 exec swaybg -i ~/personal/wallpapers/joyboy.png -m fill
 exec mako
 
+exec_always wl-paste -t text --watch cliphist store
+exec_always wl-paste -p --watch cliphist store
 
 bar {
     swaybar_command waybar
@@ -25,6 +27,8 @@ bindsym $mod+Shift+e exec exec swaymsg exit
 bindsym $mod+Shift+q kill
 
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
 
 # Media Keys
 
