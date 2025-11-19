@@ -1,0 +1,22 @@
+[general]
+import = ["./tokyo-night.toml"]
+
+[window]
+decorations = "None"
+dynamic_title = true
+opacity = 0.90
+blur = true
+
+[cursor.style]
+shape = "Beam"
+
+[window.padding]
+x = 8
+y = 8
+
+[font]
+size = 14
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"

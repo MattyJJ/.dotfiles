@@ -2,6 +2,7 @@ setopt AUTO_CD
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
+
 if [[ ! -d ~/.zsh/plugins/znap ]]; then
 	mkdir -p ~/.zsh/plugins  
 	git clone https://github.com/marlonrichert/zsh-snap.git ~/.zsh/plugins/znap
@@ -65,4 +66,3 @@ if command -v tmux >/dev/null 2>&1; then
         exec tmux
     fi
 fi
-
