@@ -2,8 +2,8 @@
 {
     "layer": "top",
 
-    "margin-top": 0,
-    "margin-bottom": 1,
+    "margin-top": 5,
+    "margin-bottom": -5,
     "margin-left": 0,
     "margin-right": 0,
     "spacing": 0,
@@ -11,17 +11,18 @@
     "height": 16,
 
     "modules-left": [
-        "clock",
-        "hyprland/window"
-    ],
-
-    "modules-center": [
         "hyprland/workspaces"
     ],
 
-    "modules-right": [
-        "battery"
+    "modules-center": [
+        "hyprland/window"
     ],
+
+    "modules-right": [
+        "battery",
+        "clock"
+    ],
+
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -31,8 +32,8 @@
         }
     },
 
-    "clock": {
-        "interval": 1
+    "hyprland/window": {
+        "max-length": 100
     },
 
     "battery": {
@@ -43,7 +44,10 @@
             "discharging": "🔌"
         },
         "interval": 1
-    }
+    },
 
+    "clock": {
+        "interval": 1
+    }
 
 }
