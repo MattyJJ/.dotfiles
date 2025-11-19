@@ -31,13 +31,18 @@
         }
     },
 
+    "clock": {
+        "interval": 1
+    },
+
     "battery": {
         "format": "{icon} {capacity}%",
         "format-icons": {
             "charging": "⚡",
             "full": "🔋",
             "discharging": "🔌"
-        }
+        },
+        "interval": 1
     }
 
 
