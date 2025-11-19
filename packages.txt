@@ -1,0 +1,17 @@
+kitty
+hyprland
+swaybg
+rofi
+hyprlock
+wl-clipboard
+mako
+hypridle
+grim
+slurp
+swappy
+fzf
+fastfetch
+starship
+zsh
+tmux
+stow
