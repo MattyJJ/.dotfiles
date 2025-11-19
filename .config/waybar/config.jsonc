@@ -1,0 +1,44 @@
+
+{
+    "layer": "top",
+
+    "margin-top": 0,
+    "margin-bottom": 1,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 0,
+
+    "height": 16,
+
+    "modules-left": [
+        "clock",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "battery"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "○"
+        }
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "charging": "⚡",
+            "full": "🔋",
+            "discharging": "🔌"
+        }
+    }
+
+
+}

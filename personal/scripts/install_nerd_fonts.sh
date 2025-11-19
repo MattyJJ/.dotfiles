@@ -6,6 +6,12 @@ if ! command -v git &> /dev/null; then
     sudo pacman -S --needed git
 fi
 
-git clone https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts --depth=1
+if [ ! -d "$HOME/.nerd-fonts" ]; then
+    git clone https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts --depth=1
+else
+    echo "~/.nerd-fonts already exists, pulling latest changes..."
+    cd ~/.nerd-fonts
+    git pull
+fi
 
 cd ~/.nerd-fonts && ./install.sh

@@ -1,0 +1,65 @@
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "FiraCode Nerd Font", "Noto Color Emoji";
+	font-size: 14px;
+	min-height: 24px;
+}
+
+#waybar {
+    background: transparent;
+    color: #c0caf5;
+}
+
+
+#window {
+    margin-left: 16px;
+    margin-right: 80px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    transition: none;
+    background: #24283b; 
+    border-radius: 24px;
+}
+
+#workspaces {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    background: #24283b;
+    border-radius: 24px;
+}
+
+#workspaces button {
+    color: #565f89;
+}
+
+#workspaces button.focused {
+    color: #a9b1d6;
+}
+
+#clock {
+    margin-left: 8px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    transition: none;
+    background: #24283b;
+    border-radius: 24px;
+}
+
+#battery {
+    margin-left: 8px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    transition: none;
+    background: #24283b;
+    border-radius: 24px;
+}
+

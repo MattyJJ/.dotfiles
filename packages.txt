@@ -1,6 +1,7 @@
 kitty
 hyprland
 swaybg
+waybar
 rofi
 hyprlock
 wl-clipboard
