@@ -24,6 +24,9 @@
 }
 
 #workspaces button {
+    padding: 4px;
+    margin-left: 1px;
+    margin-right: 1px;
     color: #565f89;
 }
 
