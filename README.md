@@ -3,7 +3,5 @@
 These are my dotfiles, i dont really like configuring stuff so i've done the minimum with no bs.
 I don't recommend using these, they are very opinionated.
 
-Setup is done via executing `stow .` in the projects base directory 
-
 (Shitty fix)
 to use languages managed under asdf i just did `Defaults !secure_path` in sudoers and alias sudo as sudo -E to keep current path
