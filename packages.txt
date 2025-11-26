@@ -16,3 +16,5 @@ starship
 zsh
 tmux
 stow
+nvim
+
