@@ -1,0 +1,21 @@
+
+{
+    "label" : "suspend",
+    "action" : "systemctl suspend",
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+}
+{
+    "label" : "lock",
+    "action" : "loginctl lock-session",
+}
+{
+    "label" : "logout",
+    "action" : "loginctl terminate-user $USER",
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+}

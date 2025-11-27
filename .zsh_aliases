@@ -1,0 +1,12 @@
+alias cp="cp -iv"
+alias mkdir="mkdir -pv"
+alias mv="mv -iv"
+alias rm="rm -rf --"
+alias ll="ls -la"
+alias la="ls -a"
+alias zsrc="source ~/.zshrc"
+
+alias cls="clear"
+
+# to preserve user path, for example to use language binaries managed by asdf
+alias sudo="sudo -E"

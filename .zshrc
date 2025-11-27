@@ -1,3 +1,5 @@
+source ~/.zsh_aliases 
+
 setopt AUTO_CD
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
@@ -8,14 +10,6 @@ if [[ ! -d ~/.zsh/plugins/znap ]]; then
 	git clone https://github.com/marlonrichert/zsh-snap.git ~/.zsh/plugins/znap
 fi
 source ~/.zsh/plugins/znap/znap.zsh
-
-
-alias ll="ls -la"
-alias la="ls -a"
-alias zsrc="source ~/.zshrc"
-
-# to preserve user path, for example to use language binaries managed by asdf
-alias sudo="sudo -E"
 
 # AUTO COMPLETIONS
 

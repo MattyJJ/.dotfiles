@@ -8,3 +8,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 vim.opt.signcolumn = 'yes'
+vim.opt.winborder = "none"
+
+
