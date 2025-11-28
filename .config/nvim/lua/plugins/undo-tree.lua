@@ -1,6 +1,6 @@
 return {
-  'mbbill/undotree',
-  config = function()
-    noremap('<leader>u', '<Cmd>UndotreeToggle<CR>')
-  end,
+    'mbbill/undotree',
+    config = function()
+        nremap('<leader>u', '<Cmd>UndotreeToggle<CR>')
+    end,
 }
