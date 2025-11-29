@@ -5,6 +5,6 @@
 [credential]
     helper = store
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [gpg]
-	format = ssh
+    format = ssh
