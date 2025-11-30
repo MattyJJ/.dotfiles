@@ -1,37 +1,40 @@
+# SOURCE
+
 source ~/.zsh_aliases 
+
+# OPTIONS
 
 setopt AUTO_CD
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
+# DEFER
 
-if [[ ! -d ~/.zsh/plugins/znap ]]; then
-	mkdir -p ~/.zsh/plugins  
-	git clone https://github.com/marlonrichert/zsh-snap.git ~/.zsh/plugins/znap
+defer_plugin="romkatv/zsh-defer"
+defer_dir="$HOME/.zsh/plugins/$defer_plugin"
+defer_name="zsh-defer.plugin"
+
+if [ ! -d "$defer_dir" ]; then
+    mkdir -p "$(dirname "$defer_dir")"
+    git clone "https://github.com/$defer_plugin.git" "$defer_dir"
 fi
-source ~/.zsh/plugins/znap/znap.zsh
+source "$defer_dir/$defer_name.zsh"
 
-# AUTO COMPLETIONS
+# COMPLETION
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' use-cache on
 
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 autoload -Uz compinit
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-    compinit
-else
-    compinit -C
-fi
+zsh-defer compinit 
 
-# ATUIN (Very nice command history.)
-eval "$(atuin init zsh --disable-up-arrow)"
-
-# THEME (starship)
+# TOOLS
+zsh-defer eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(starship init zsh)"
 
 # PLUGINS
-
-autoload -Uz znap && znap source marlonrichert/zsh-snap
-
-znap source romkatv/zsh-defer
 
 git_plugins=(
     zsh-users/zsh-autosuggestions
@@ -39,11 +42,22 @@ git_plugins=(
     zsh-users/zsh-syntax-highlighting
 )
 
-for plugin in "${git_plugins[@]}"; do 
-    zsh-defer znap source "$plugin"
+for plugin in "${git_plugins[@]}"; do
+    plugin_dir="$HOME/.zsh/plugins/$plugin"
+
+    if [ ! -d "$plugin_dir" ]; then
+        mkdir -p "$(dirname "$plugin_dir")"
+        git clone "https://github.com/$plugin.git" "$plugin_dir"
+    fi
+
+    plugin_name="${plugin##*/}"
+    plugin_file="$plugin_dir/$plugin_name.zsh"
+    if [ -f "$plugin_file" ]; then
+        zsh-defer source "$plugin_file"
+    fi
+
 done
 
-zstyle ':completion:*' menu select
 
 # SSH
 
@@ -60,3 +74,4 @@ if command -v tmux >/dev/null 2>&1; then
         exec tmux
     fi
 fi
+

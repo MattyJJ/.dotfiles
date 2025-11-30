@@ -25,17 +25,10 @@
     ],
 
 
-    "hyprland/workspaces": {
-        // "format": "{icon}",
-        // "format-icons": {
-        //     "active": "",
-        //     "default": "○"
-        // }
-    },
-
     "hyprland/window": {
         "max-length": 100
     },
+
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -51,7 +44,7 @@
         "format-icons": {
             "default": [ "󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
             "charging": [ "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
-        },
+        }
     },
 
     "clock": {
