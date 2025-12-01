@@ -32,9 +32,9 @@ return {
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                 }, {
-                        { name = "buffer" },
-                        { name = "path" },
-                    }),
+                    { name = "buffer" },
+                    { name = "path" },
+                }),
                 formatting = {
                     fields = { "abbr", "kind", "menu" },
                     format = function(entry, item)
@@ -48,9 +48,6 @@ return {
                     end,
                 },
             })
-
-
         end,
     },
 }
-

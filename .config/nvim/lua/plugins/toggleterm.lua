@@ -3,7 +3,7 @@ return {
     version = "*",
     event = "VeryLazy",
     config = function()
-        require("toggleterm").setup{
+        require("toggleterm").setup {
             size = 18,
             open_mapping = [[<C-\>]],
             hide_numbers = true,
@@ -18,4 +18,3 @@ return {
         }
     end
 }
-

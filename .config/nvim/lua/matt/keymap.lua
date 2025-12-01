@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
+
 function remap(mode, keybind, callback, desc)
     vim.keymap.set(mode, keybind, callback, { desc = desc })
 end

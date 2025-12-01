@@ -1,10 +1,10 @@
 return {
-  'kylechui/nvim-surround',
-  opts = {
-    keymaps = {
-      add = 'ys',
-      delete = 'ds',
-      change = 'cs',
+    'kylechui/nvim-surround',
+    opts = {
+        keymaps = {
+            add = 'ys',
+            delete = 'ds',
+            change = 'cs',
+        }
     }
-  }
 }

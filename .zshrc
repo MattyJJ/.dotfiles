@@ -12,27 +12,26 @@ setopt HIST_IGNORE_ALL_DUPS
 
 defer_plugin="romkatv/zsh-defer"
 defer_dir="$HOME/.zsh/plugins/$defer_plugin"
-defer_name="zsh-defer.plugin"
 
 if [ ! -d "$defer_dir" ]; then
     mkdir -p "$(dirname "$defer_dir")"
     git clone "https://github.com/$defer_plugin.git" "$defer_dir"
 fi
-source "$defer_dir/$defer_name.zsh"
+source "$defer_dir/zsh-defer.plugin.zsh"
 
 # COMPLETION
-
-zstyle ':completion:*' menu select
-zstyle ':completion:*' use-cache on
 
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 autoload -Uz compinit
-zsh-defer compinit 
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    zsh-defer -t 0.1 compinit
+else
+    zsh-defer -t 0.1 compinit -C
+fi
 
 # TOOLS
 zsh-defer eval "$(atuin init zsh --disable-up-arrow)"
-eval "$(starship init zsh)"
 
 # PLUGINS
 
@@ -61,11 +60,10 @@ done
 
 # SSH
 
-if [ -z "$SSH_AUTH_SOCK" ] || ! pgrep -u "$USER" ssh-agent >/dev/null 2>&1; then
-    eval "$(ssh-agent -s)" >/dev/null 2>&1
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)" > /dev/null
+    ssh-add ~/.ssh/id_ed25519 2>/dev/null
 fi
-
-ssh-add -l | grep "id_ed25519" >/dev/null 2>&1 || ssh-add ~/.ssh/id_ed25519 >/dev/null 2>&1
 
 # TMUX
 
@@ -75,3 +73,5 @@ if command -v tmux >/dev/null 2>&1; then
     fi
 fi
 
+# prompt
+eval "$(starship init zsh)"

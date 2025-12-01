@@ -29,6 +29,11 @@
         "max-length": 100
     },
 
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
