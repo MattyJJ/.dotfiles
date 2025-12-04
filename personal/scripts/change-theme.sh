@@ -11,19 +11,22 @@ done
 
 selected=$(printf "%s\n" "${themes[@]}" | rofi -dmenu -p "Select Theme")
 
-if [[ ! " ${themes[@]} " =~ " ${selected} " ]]; then
-    exit 1
-fi
+[[ -z "$selected" ]] && exit 1
 
-if [[ -z "$selected" ]]; then
-    exit 1
-fi
+found=false
+for item in "${themes[@]}"; do
+    [[ "$item" == "$selected" ]] && found=true && break
+done
+
+[[ "$found" == false ]] && exit 1
+
 
 cp "$THEME_DIR/$selected/kitty.conf" "$CONFIG_DIR/kitty/theme.conf"
 cp "$THEME_DIR/$selected/nvim.lua" "$CONFIG_DIR/nvim/lua/matt/colour.lua"
 
 wallpaper="$(random-file.sh "$THEME_DIR/$selected/wallpapers")"
 
-set-wallpaper.sh $wallpaper
+set-wallpaper.sh "$wallpaper"
 
-kill -SIGUSR1 $(pgrep -x kitty)
+pgrep -x kitty | xargs -r kill -SIGUSR1
+
