@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 battery="/sys/class/power_supply/BAT0"
 

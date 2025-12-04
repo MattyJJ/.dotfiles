@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 languages=`echo "golang lua cpp c typescript nodejs zig bash" | tr ' ' '\n'`
 core_utils=`echo "xargs find mv sed awk" | tr ' ' '\n'`
 
