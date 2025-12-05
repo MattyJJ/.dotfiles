@@ -8,24 +8,20 @@
 }
 
 #waybar {
-    background: @background;
+    background: alpha(@background, 0.90);
     color: @foreground;
 }
 
 #workspaces {
     margin-left: 8px;
-    
-    background: @background;
-
-    border-radius: 24px;
 }
 
 #workspaces button {
-    color: #565f89;
+    color: @foreground;
 }
 
 #workspaces button.active {
-    background: @accent;
+    background: alpha(@accent, 0.90);
 }
 
 
@@ -34,7 +30,6 @@
     padding-right: 16px;
 
     transition: none;
-    border-radius: 24px;
 }
 
 window#waybar.empty #window {  
@@ -51,7 +46,7 @@ window#waybar.empty #window {
     transition: none;
 }
 
-#clock {
+#custom-utcclock {
     margin-right: 8px;
 
     transition: none;

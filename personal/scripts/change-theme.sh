@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-THEME_DIR="$HOME/.themes"
+THEME_DIR="$HOME/.config/.themes"
 CONFIG_DIR="$HOME/.config"
 
 themes=()
 
-for dir in "$THEME_DIR"/*/; do
+for dir in "$THEME_DIR"/[!.]*/; do
     themes+=( "$(basename "$dir")" )
 done
 
@@ -23,10 +23,12 @@ done
 
 cp "$THEME_DIR/$selected/kitty.conf" "$CONFIG_DIR/kitty/theme.conf"
 cp "$THEME_DIR/$selected/nvim.lua" "$CONFIG_DIR/nvim/lua/matt/colour.lua"
+cp "$THEME_DIR/$selected/waybar.css" "$CONFIG_DIR/waybar/theme.css"
 
 wallpaper="$(random-file.sh "$THEME_DIR/$selected/wallpapers")"
 
 set-wallpaper.sh "$wallpaper"
 
 pgrep -x kitty | xargs -r kill -SIGUSR1
+pgrep -x waybar | xargs -r kill -SIGUSR2
 

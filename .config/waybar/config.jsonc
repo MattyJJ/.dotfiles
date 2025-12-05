@@ -21,7 +21,7 @@
     "modules-right": [
         "pulseaudio",
         "battery",
-        "clock"
+        "custom/utcclock"
     ],
 
 
@@ -52,7 +52,9 @@
         }
     },
 
-    "clock": {
+
+    "custom/utcclock": {
+        "exec": "echo \"$(date '+%H:%M') ($(date -u '+%H UTC'))\"",
         "interval": 1
     }
 
