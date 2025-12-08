@@ -1,8 +1,4 @@
 README.md
-setup.sh
-lazy-lock.json
-.git
-old
-packages.txt
-install.sh
 link.sh
+.git
+.gitignore
