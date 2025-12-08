@@ -2,13 +2,13 @@
 {
     "layer": "top",
 
-    "margin-top": 0,
+    "margin-top": 4,
     "margin-bottom": 0,
-    "margin-left": 0,
-    "margin-right": 0,
+    "margin-left": 5,
+    "margin-right": 5,
     "spacing": 0,
 
-    "height": 30,
+    "height": 35,
 
     "modules-left": [
         "hyprland/workspaces"
@@ -24,6 +24,14 @@
         "custom/utcclock"
     ],
 
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "special": ""
+        }
+    },
 
     "hyprland/window": {
         "max-length": 100
