@@ -1,5 +1,5 @@
 lazy-lock.json
 platform.conf
 /.config/kitty/theme.conf
-/.config/waybar/style.css
+/.config/waybar/theme.css
 /.config/nvim/lua/matt/colour.lua
