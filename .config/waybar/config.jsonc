@@ -1,4 +1,3 @@
-
 {
     "layer": "top",
 
@@ -20,7 +19,7 @@
 
     "modules-right": [
         "pulseaudio",
-        "battery",
+        "custom/battery",
         "custom/utcclock"
     ],
 
@@ -51,15 +50,11 @@
         } 
     },
 
-    "battery": {
-        "interval": "1",
-        "format": "{icon} {capacity}%",
-        "format-icons": {
-            "default": [ "󰂃", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
-            "charging": [ "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
-        }
+    "custom/battery": {
+        "exec": "battery-label.sh",
+        "interval": 1,
+        "format": "{}"
     },
-
 
     "custom/utcclock": {
         "exec": "echo \"$(date '+%H:%M') ($(date -u '+%H UTC'))\"",

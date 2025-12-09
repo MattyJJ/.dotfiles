@@ -2,3 +2,5 @@ README.md
 link.sh
 .git
 .gitignore
+packages.txt
+install-packages.sh

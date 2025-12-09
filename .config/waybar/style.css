@@ -42,9 +42,8 @@ window#waybar.empty #window {
     margin-right: 16px;
 }
 
-#battery {
+#custom-battery {
     margin-right: 16px;
-
     transition: none;
 }
 
