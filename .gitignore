@@ -1,2 +1,4 @@
 lazy-lock.json
 platform.conf
+/.config/kitty/theme.conf
+/.config/waybar/style.css
