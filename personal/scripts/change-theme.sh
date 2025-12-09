@@ -9,7 +9,11 @@ for dir in "$THEME_DIR"/[!.]*/; do
     themes+=( "$(basename "$dir")" )
 done
 
-selected=$(printf "%s\n" "${themes[@]}" | rofi -dmenu -p "Select Theme")
+selected="$1"
+
+if [ -z "$selected" ]; then
+    selected=$(printf "%s\n" "${themes[@]}" | rofi -dmenu -p "Select Theme")
+fi
 
 [[ -z "$selected" ]] && exit 1
 
@@ -31,4 +35,6 @@ set-wallpaper.sh "$wallpaper"
 
 pgrep -x kitty | xargs -r kill -SIGUSR1
 pgrep -x waybar | xargs -r kill -SIGUSR2
+
+echo "$selected" > $THEME_DIR/.current-theme
 

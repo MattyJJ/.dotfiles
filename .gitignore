@@ -3,3 +3,4 @@ platform.conf
 /.config/kitty/theme.conf
 /.config/waybar/theme.css
 /.config/nvim/lua/matt/colour.lua
+/.config/.themes/.current-theme
