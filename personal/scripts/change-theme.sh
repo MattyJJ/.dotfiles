@@ -36,5 +36,5 @@ set-wallpaper.sh "$wallpaper"
 pgrep -x kitty | xargs -r kill -SIGUSR1
 pgrep -x waybar | xargs -r kill -SIGUSR2
 
-echo "$selected" > $THEME_DIR/.current-theme
+echo "$selected" > $HOME/.current-theme
 
