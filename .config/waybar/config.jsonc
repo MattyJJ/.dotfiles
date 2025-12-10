@@ -28,12 +28,13 @@
         "format-icons": {
             "active": "",
             "default": "",
-            "special": ""
+            "empty": ""
         }
     },
 
     "hyprland/window": {
-        "max-length": 100
+        "max-length": 100,
+        "separate-outputs": true
     },
 
     "tray": {
