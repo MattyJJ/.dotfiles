@@ -39,6 +39,10 @@ backup -rf "$HOME/.config/waybar"
 backup -rf "$HOME/.config/wlogout"
 backup "$HOME/.config/starship.toml"
 
+backup "$HOME/personal"
+
+mkdir "$HOME/personal"
+
 stow -D -t ~ .
 stow -t ~ .
 

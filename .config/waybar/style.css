@@ -19,7 +19,6 @@
 
 #workspaces button {
     color: @foreground;
-    margin-left: 0px;
     font-size: 10px;
 }
 
