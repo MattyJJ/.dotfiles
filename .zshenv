@@ -8,4 +8,4 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 export GOPATH="$HOME/.go"
 
-export PLATFORM="laptop"
+export PLATFORM=$(platform.sh)

@@ -58,7 +58,7 @@
     },
 
     "custom/utcclock": {
-        "exec": "echo \"$(date '+%H:%M') ($(date -u '+%H UTC'))\"",
+        "exec": "echo \"$(date '+%I:%M') ($(date -u '+%H UTC'))\"",
         "interval": 1
     }
 

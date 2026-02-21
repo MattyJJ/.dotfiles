@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-[ "$PLATFORM" != "laptop" ] && exit 0
-[ ! -d /sys/class/power_supply/BAT0 ] && exit 0
+[ $(platform.sh) != "laptop" ] && exit 0
 
 battery="/sys/class/power_supply/BAT0"
 message=""
