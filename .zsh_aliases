@@ -8,5 +8,3 @@ alias zsrc="source ~/.zshrc"
 
 alias cls="clear"
 
-# to preserve user path, for example to use language binaries managed by asdf
-alias sudo="sudo -E"

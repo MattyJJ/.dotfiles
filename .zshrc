@@ -21,8 +21,6 @@ source "$defer_dir/zsh-defer.plugin.zsh"
 
 # COMPLETION
 
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-
 autoload -Uz compinit
 if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
     zsh-defer -t 0.1 compinit
