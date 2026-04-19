@@ -13,7 +13,7 @@ zsh
 stow
 tmux
 git
-swww
+awww
 ripgrep
 fzf
 grim
@@ -25,5 +25,4 @@ brightnessctl
 pipewire
 pipewire-pulse
 networkmanager
-asdf
 atuin
