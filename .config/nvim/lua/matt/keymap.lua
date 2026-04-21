@@ -1,5 +1,7 @@
 vim.g.mapleader = ' '
+
 vim.g.maplocalleader = '\\'
+
 
 function remap(mode, keybind, callback, desc)
     vim.keymap.set(mode, keybind, callback, { desc = desc })
@@ -15,36 +17,62 @@ end
 
 -- NAVIGATION
 
+
 nremap('H', 'gE')
 nremap('L', 'w')
+
 
 vremap('H', 'gE')
 vremap('L', 'w')
 
+
 nremap('<C-d>', '<C-d>zz')
 nremap('<C-u>', '<C-u>zz')
 
+-- searching
+
+nremap('n', 'nzzzv')
+nremap('N', 'Nzzzv')
+
+nremap('<Esc>', '<Cmd>nohlsearch<CR>', 'clear search highlight')
+nremap('<leader>nh', '<Cmd>set hlsearch!<CR>', 'toggle search highlight')
+
+
 -- WINDOW CONTROLS
+
 
 nremap('<leader>sv', '<Cmd>vsplit<CR>')
 nremap('<leader>sh', '<Cmd>split<CR>')
 
+
 nremap('<C-h>', '<C-w>h')
 nremap('<C-j>', '<C-w>j')
+
 nremap('<C-k>', '<C-w>k')
 nremap('<C-l>', '<C-w>l')
 
-nremap('<A-Up>', '<Cmd>resize -2<CR>')
-nremap('<A-Left>', '<Cmd>vertical resize -2<CR>')
-nremap('<A-Right>', '<Cmd>vertical resize +2<CR>')
-nremap('<A-Down>', '<Cmd>resize +2<CR>')
 
--- SHIFTING
+nremap('<D-Up>', '<Cmd>resize -2<CR>')
+nremap('<D-Left>', '<Cmd>vertical resize -2<CR>')
 
-nremap('<A-j>', '<Cmd>m .+1<CR>==', 'Shift current line up')
-nremap('<A-k>', '<Cmd>m .-2<CR>==', 'Shift current line down')
+nremap('<D-Right>', '<Cmd>vertical resize +2<CR>')
+nremap('<D-Down>', '<Cmd>resize +2<CR>')
 
-vremap('<A-j>', "<Cmd>m '>+1<CR>gv=gv", 'Shift selection up')
-vremap('<A-k>', "<Cmd>m '<-2<CR>gv=gv", 'Shift selection down')
+
+-- TEXT MANIPULATION
+
+nremap('<D-j>', '<Cmd>m .+1<CR>==', 'Shift current line up')
+nremap('<D-k>', '<Cmd>m .-2<CR>==', 'Shift current line down')
+
+
+vremap('<D-j>', "<Cmd>m '>+1<CR>gv=gv", 'Shift selection up')
+vremap('<D-k>', "<Cmd>m '<-2<CR>gv=gv", 'Shift selection down')
+
+vremap('<', '<gv')
+vremap('>', '>gv')
+
+vremap('<leader>p', '"_dP')
+
+
 
 nremap('<leader>rn', function() vim.lsp.buf.rename() end)

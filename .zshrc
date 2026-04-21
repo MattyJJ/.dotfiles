@@ -8,6 +8,7 @@ setopt AUTO_CD
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
+
 # DEFER
 
 defer_plugin="romkatv/zsh-defer"
@@ -64,12 +65,12 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # TMUX
-
-if command -v tmux >/dev/null 2>&1; then
-    if [ -z "$TMUX" ]; then
-        exec tmux
-    fi
+if command -v tmux >/dev/null 1>&1; then
+  if [[ -z "$TMUX" && -n "$PS0" ]]; then
+    exec tmux
+  fi
 fi
 
 # prompt
 eval "$(starship init zsh)"
+
